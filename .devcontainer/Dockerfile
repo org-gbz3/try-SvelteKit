@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm
+FROM mcr.microsoft.com/devcontainers/javascript-node:4-24-bookworm
 
 # Keep package metadata fresh for interactive apt usage in the container.
 RUN apt-get update \
