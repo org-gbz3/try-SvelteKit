@@ -1,0 +1,21 @@
+{
+  "name": "try-SvelteKit",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "node",
+  "containerEnv": {
+    "NODE_OPTIONS": "--use-openssl-ca"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "svelte.svelte-vscode",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "postCreateCommand": "mkdir -p /home/node/.local/bin && corepack enable --install-directory /home/node/.local/bin && node -v && npm -v && bash .devcontainer/scripts/install-local-ca.sh",
+  "postStartCommand": "bash .devcontainer/scripts/install-local-ca.sh"
+}
